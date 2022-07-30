@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "8a45b2a6-7467-4fb9-9c9c-d08307cfce9f",
+		"name": "Auth Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18583826"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"soumik@gmail.com\",\r\n    \"password\": \"abcabc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"soumik@gmail.com\",\r\n    \"password\": \"abcabc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/user/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvdW1pa0BnbWFpbC5jb20iLCJ1c2VySWQiOiI2MmU1MTExNGE5NjA0YmMwZGVmNGUwNmYiLCJpYXQiOjE2NTkxODg3ODksImV4cCI6MTY1OTc5MzU4OX0.fIJbqVtfEmspgUdweMK6PKrDYN59HLxfDZmbUF10Pkw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "62e53726fe2855d59de2ade7",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Mr Test",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Bangladesh",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "01689201370",
+							"type": "text"
+						},
+						{
+							"key": "img",
+							"type": "file",
+							"src": "/C:/Users/soumi/Desktop/img/15s-fq2597tu-01-500x500.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/update/62e53726fe2855d59de2ade7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"update",
+						"62e53726fe2855d59de2ade7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
