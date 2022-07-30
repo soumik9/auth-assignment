@@ -1,8 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-require('dotenv').config();
 const app = express();
 
 //middleware
@@ -15,9 +13,6 @@ const connection = require("./db");
 const authRoute = require('./routes/authRoute');
 const userRoute = require('./routes/userRoute');
 
-// const verifyLogin = require('./middleware/verifyLogin');
-
-
 // database connection
 (async () => await connection())();
 
@@ -27,15 +22,15 @@ async function run() {
 
         // api homepage
         app.get('/', (req, res) => {
-            res.send('Inventory server is ready.')
+            res.send('Auth server is ready.')
         })
 
         app.use('/api/', authRoute);
-        app.use('/api/', userRoute);
+        app.use('/api/user', userRoute);
 
 
         // to view images
-        //   app.use('/api/uploads', express.static('uploads'))
+        app.use('/api/uploads', express.static('uploads'))
 
     } finally {
 
@@ -43,8 +38,6 @@ async function run() {
 }
 
 run().catch(console.dir);
-
-
 
 // port listening
 const startServer = (port) => {
@@ -57,4 +50,5 @@ const startServer = (port) => {
         process.exit();
     }
 };
+
 startServer(process.env.PORT || 5000);
