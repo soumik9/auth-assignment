@@ -2,16 +2,13 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// const verifyLogin = require('../middleware/verifyLogin');
 const AuthController = require('../controllers/AuthController');
-// const upload = require('../middleware/upload')
-
 
 
 //login a user
 router.post('/login', AuthController.login);
 //create a new user
-router.post('/signup', upload.single('img'), AuthController.signup);
+router.post('/signup', AuthController.signup);
 
 
 

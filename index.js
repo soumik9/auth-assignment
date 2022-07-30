@@ -13,6 +13,7 @@ app.use(express.json());
 // requires
 const connection = require("./db");
 const authRoute = require('./routes/authRoute');
+const userRoute = require('./routes/userRoute');
 
 // const verifyLogin = require('./middleware/verifyLogin');
 
@@ -30,6 +31,7 @@ async function run() {
         })
 
         app.use('/api/', authRoute);
+        app.use('/api/', userRoute);
 
 
         // to view images
